@@ -1,8 +1,12 @@
 package com.dewitt;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Well {
 	private float cost;
 	private int projectLength;
+	private HashMap<Integer, ProductionProjection> productionProjections = new HashMap<Integer, ProductionProjection>();
 
 	public Well(float cost, int projectLength){
 		setCost(cost);
@@ -11,7 +15,9 @@ public class Well {
 	}
 	
 	private void generateProfitProjection() {
-		
+		for(int day = 1; day<366; day++){
+			productionProjections.put(day, ProductionProjection.randomProductionProjection(day));
+		}
 	}
 
 	private void setProjectLength(int projectLength) {
@@ -28,6 +34,10 @@ public class Well {
 
 	public int getProjectLength() {
 		return this.projectLength;
+	}
+
+	public HashMap<Integer, ProductionProjection> getProductionProjections() {
+		return this.productionProjections;
 	}
 	
 }

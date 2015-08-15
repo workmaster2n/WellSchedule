@@ -27,9 +27,8 @@ public class WellTest {
 	}
 	
 	@Test
-	public void testConstructorCreates21ProductionProjections() {
-		
-		
+	public void testConstructorCreates365ProductionProjections() {
+		assertEquals("Constructor builds 365 production projections", 365, well.getProductionProjections().keySet().size());
 	}
 
 }
