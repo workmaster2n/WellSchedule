@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Well {
 	private float cost;
 	private int projectLength;
-	private ArrayList<ProductionProjection> productionProjections = new ArrayList<ProductionProjection>();
+	private ArrayList<ProductionProfile> productionProfiles = new ArrayList<ProductionProfile>();
 
 	public Well(float cost, int projectLength){
 		setCost(cost);
@@ -15,7 +15,7 @@ public class Well {
 	
 	private void generateProfitProjection() {
 		for(int day = 1; day<366; day++){
-			productionProjections.add(ProductionProjection.randomProductionProjection(day));
+			productionProfiles.add(ProductionProfile.randomProductionProjection(day));
 		}
 	}
 
@@ -35,8 +35,8 @@ public class Well {
 		return this.projectLength;
 	}
 
-	public ArrayList<ProductionProjection> getProductionProjections() {
-		return this.productionProjections;
+	public ArrayList<ProductionProfile> getProductionProfiles() {
+		return this.productionProfiles;
 	}
 	
 }

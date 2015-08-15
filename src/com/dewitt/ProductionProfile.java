@@ -2,11 +2,11 @@ package com.dewitt;
 
 import java.util.Random;
 
-public class ProductionProjection {
+public class ProductionProfile {
 	private int day;
 	private float barrels;
 	
-	public ProductionProjection(int day, float barrels){
+	public ProductionProfile(int day, float barrels){
 		setDays(day);
 		setBarrels(barrels);
 	}
@@ -23,10 +23,10 @@ public class ProductionProjection {
 		return this.barrels;
 	}
 	
-	public static ProductionProjection randomProductionProjection(int day){
+	public static ProductionProfile randomProductionProjection(int day){
 		Random random = new Random();
 		float randomBarrels = Math.abs(random.nextFloat()*random.nextInt());
-		return new ProductionProjection(day, randomBarrels);
+		return new ProductionProfile(day, randomBarrels);
 	}
 	
 	
