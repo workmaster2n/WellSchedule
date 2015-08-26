@@ -1,6 +1,7 @@
 package com.dewitt;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Well {
 	private float cost;
@@ -37,6 +38,17 @@ public class Well {
 
 	public ArrayList<ProductionProfile> getProductionProfiles() {
 		return this.productionProfiles;
+	}
+
+	public Float analyze() {
+		Random random = new Random();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cost * random.nextInt();
 	}
 	
 }
