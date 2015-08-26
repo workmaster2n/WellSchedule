@@ -5,6 +5,7 @@ import java.util.Random;
 public class ProductionProfile {
 	private int day;
 	private float barrels;
+	private static Random random = new Random();
 	
 	public ProductionProfile(int day, float barrels){
 		setDays(day);
@@ -24,7 +25,6 @@ public class ProductionProfile {
 	}
 	
 	public static ProductionProfile randomProductionProjection(int day){
-		Random random = new Random();
 		float randomBarrels = Math.abs(random.nextFloat()*random.nextInt());
 		return new ProductionProfile(day, randomBarrels);
 	}
